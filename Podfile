@@ -6,5 +6,6 @@ target 'SimpleImageFilter' do
   use_frameworks!
   
   # Pods for SimpleImageFilter
+  pod 'TesseractOCRiOS', '4.0.0'
 
 end
