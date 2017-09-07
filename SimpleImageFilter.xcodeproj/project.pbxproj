@@ -19,6 +19,10 @@
 		CE293B3E1F58192500C6138B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE293B361F58169B00C6138B /* AVFoundation.framework */; };
 		CE293B3F1F58193700C6138B /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE293B3A1F5816BF00C6138B /* CoreMedia.framework */; };
 		CE293B401F58193F00C6138B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE293B3C1F5816C800C6138B /* CoreGraphics.framework */; };
+		CE906B1E1F615BE100F0E221 /* TesseractOCR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE906B1D1F615BE100F0E221 /* TesseractOCR.framework */; };
+		CE906B251F615D2500F0E221 /* GPUImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE293B5C1F59608600C6138B /* GPUImage.framework */; };
+		CE906B261F615D3200F0E221 /* GPUImage.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CE293B5C1F59608600C6138B /* GPUImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CE906B2A1F615DA700F0E221 /* TextRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = CE906B291F615DA700F0E221 /* TextRecognizer.m */; };
 		CED7D6921F6152C900892B6A /* Assets-iOS.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CED7D6911F6152C900892B6A /* Assets-iOS.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +55,13 @@
 			remoteGlobalIDString = BC9E34F11E524A2200B8604F;
 			remoteInfo = GPUImageTests_iOS;
 		};
+		CE906B231F615D1B00F0E221 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BC9E36581E525B5A00B8604F /* GPUImage.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = BC9E34E81E524A2200B8604F;
+			remoteInfo = GPUImage_iOS;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -60,6 +71,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				CE906B261F615D3200F0E221 /* GPUImage.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +96,9 @@
 		CE293B381F5816AC00C6138B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CE293B3A1F5816BF00C6138B /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		CE293B3C1F5816C800C6138B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		CE906B1D1F615BE100F0E221 /* TesseractOCR.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TesseractOCR.framework; sourceTree = "<group>"; };
+		CE906B281F615DA700F0E221 /* TextRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextRecognizer.h; sourceTree = "<group>"; };
+		CE906B291F615DA700F0E221 /* TextRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextRecognizer.m; sourceTree = "<group>"; };
 		CED7D6911F6152C900892B6A /* Assets-iOS.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Assets-iOS.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -92,6 +107,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE906B251F615D2500F0E221 /* GPUImage.framework in Frameworks */,
+				CE906B1E1F615BE100F0E221 /* TesseractOCR.framework in Frameworks */,
 				CE26CC9F1F56B93F00B917DF /* opencv2.framework in Frameworks */,
 				CE293B401F58193F00C6138B /* CoreGraphics.framework in Frameworks */,
 				CE293B3F1F58193700C6138B /* CoreMedia.framework in Frameworks */,
@@ -123,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				CE26CCA81F56BA8100B917DF /* Supporting Files */,
+				CE906B271F615D6A00F0E221 /* TextRecognizer */,
 				CE26CCA41F56BA1C00B917DF /* OpenCV */,
 				CE26CCAA1F56BB6E00B917DF /* VersionViewController.swift */,
 				CE26CCAC1F56BB7400B917DF /* CameraScreenViewController.swift */,
@@ -147,6 +165,7 @@
 		BCD985CB1CA4400E001FF01F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CE906B1D1F615BE100F0E221 /* TesseractOCR.framework */,
 				CE293B3C1F5816C800C6138B /* CoreGraphics.framework */,
 				CE293B3A1F5816BF00C6138B /* CoreMedia.framework */,
 				CE293B381F5816AC00C6138B /* UIKit.framework */,
@@ -187,6 +206,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		CE906B271F615D6A00F0E221 /* TextRecognizer */ = {
+			isa = PBXGroup;
+			children = (
+				CE906B281F615DA700F0E221 /* TextRecognizer.h */,
+				CE906B291F615DA700F0E221 /* TextRecognizer.m */,
+			);
+			name = TextRecognizer;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -202,6 +230,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				CE906B241F615D1B00F0E221 /* PBXTargetDependency */,
 			);
 			name = SimpleImageFilter;
 			productName = SimpleImageFilter;
@@ -301,6 +330,7 @@
 			files = (
 				BCD985B21CA43FD5001FF01F /* ViewController.swift in Sources */,
 				CE26CCA71F56BA3400B917DF /* OpenCV.mm in Sources */,
+				CE906B2A1F615DA700F0E221 /* TextRecognizer.m in Sources */,
 				BCD985B01CA43FD5001FF01F /* AppDelegate.swift in Sources */,
 				CE26CCAD1F56BB7400B917DF /* CameraScreenViewController.swift in Sources */,
 				CE26CCAB1F56BB6E00B917DF /* VersionViewController.swift in Sources */,
@@ -308,6 +338,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CE906B241F615D1B00F0E221 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = GPUImage_iOS;
+			targetProxy = CE906B231F615D1B00F0E221 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		BCD985B31CA43FD5001FF01F /* Main.storyboard */ = {
@@ -420,6 +458,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = Q6Y429W25C;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/SimpleImageFilter",
