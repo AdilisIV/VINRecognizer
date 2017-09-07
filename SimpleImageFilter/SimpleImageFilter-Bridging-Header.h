@@ -3,3 +3,4 @@
 //
 
 #import "OpenCV.h"
+#import <TesseractOCR/TesseractOCR.h>
