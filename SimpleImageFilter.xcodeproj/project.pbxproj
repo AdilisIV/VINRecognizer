@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E592F2D55B65EDCCAE00738 /* Pods_SimpleImageFilter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A51B39FCDE005B8810050F5 /* Pods_SimpleImageFilter.framework */; };
 		BCD985B01CA43FD5001FF01F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD985AF1CA43FD5001FF01F /* AppDelegate.swift */; };
 		BCD985B21CA43FD5001FF01F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD985B11CA43FD5001FF01F /* ViewController.swift */; };
 		BCD985B51CA43FD5001FF01F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCD985B31CA43FD5001FF01F /* Main.storyboard */; };
@@ -66,6 +67,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2A51B39FCDE005B8810050F5 /* Pods_SimpleImageFilter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleImageFilter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D80DB715DD7482A694CE00C /* Pods-SimpleImageFilter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleImageFilter.release.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleImageFilter/Pods-SimpleImageFilter.release.xcconfig"; sourceTree = "<group>"; };
 		BC9E36581E525B5A00B8604F /* GPUImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GPUImage.xcodeproj; path = ../framework/GPUImage.xcodeproj; sourceTree = "<group>"; };
 		BCD985AC1CA43FD5001FF01F /* SimpleImageFilter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleImageFilter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCD985AF1CA43FD5001FF01F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +88,7 @@
 		CE293B3A1F5816BF00C6138B /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		CE293B3C1F5816C800C6138B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		CED7D6911F6152C900892B6A /* Assets-iOS.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Assets-iOS.xcassets"; sourceTree = "<group>"; };
+		FCF3F32EB163C35BD61C6049 /* Pods-SimpleImageFilter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleImageFilter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleImageFilter/Pods-SimpleImageFilter.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,18 +100,29 @@
 				CE293B401F58193F00C6138B /* CoreGraphics.framework in Frameworks */,
 				CE293B3F1F58193700C6138B /* CoreMedia.framework in Frameworks */,
 				CE293B3E1F58192500C6138B /* AVFoundation.framework in Frameworks */,
+				3E592F2D55B65EDCCAE00738 /* Pods_SimpleImageFilter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A087B58E606FE130B3BA26C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FCF3F32EB163C35BD61C6049 /* Pods-SimpleImageFilter.debug.xcconfig */,
+				5D80DB715DD7482A694CE00C /* Pods-SimpleImageFilter.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		BCD985A31CA43FD5001FF01F = {
 			isa = PBXGroup;
 			children = (
 				BCD985AE1CA43FD5001FF01F /* SimpleImageFilter */,
 				BCD985CB1CA4400E001FF01F /* Frameworks */,
 				BCD985AD1CA43FD5001FF01F /* Products */,
+				3A087B58E606FE130B3BA26C /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -153,6 +168,7 @@
 				CE293B361F58169B00C6138B /* AVFoundation.framework */,
 				CE26CC9E1F56B93F00B917DF /* opencv2.framework */,
 				BC9E36581E525B5A00B8604F /* GPUImage.xcodeproj */,
+				2A51B39FCDE005B8810050F5 /* Pods_SimpleImageFilter.framework */,
 			);
 			name = Frameworks;
 			path = SimpleImageFilter;
@@ -194,10 +210,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BCD985BE1CA43FD5001FF01F /* Build configuration list for PBXNativeTarget "SimpleImageFilter" */;
 			buildPhases = (
+				CCD1CC58556F4B868D450850 /* [CP] Check Pods Manifest.lock */,
 				BCD985A81CA43FD5001FF01F /* Sources */,
 				BCD985A91CA43FD5001FF01F /* Frameworks */,
 				BCD985AA1CA43FD5001FF01F /* Resources */,
 				BCD985CF1CA46BC9001FF01F /* CopyFiles */,
+				8A4D812B219BB77492803953 /* [CP] Embed Pods Frameworks */,
+				7F45487A4C464FE927B504A1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -293,6 +312,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7F45487A4C464FE927B504A1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SimpleImageFilter/Pods-SimpleImageFilter-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8A4D812B219BB77492803953 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SimpleImageFilter/Pods-SimpleImageFilter-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CCD1CC58556F4B868D450850 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BCD985A81CA43FD5001FF01F /* Sources */ = {
@@ -416,6 +483,7 @@
 		};
 		BCD985BF1CA43FD5001FF01F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FCF3F32EB163C35BD61C6049 /* Pods-SimpleImageFilter.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -440,6 +508,7 @@
 		};
 		BCD985C01CA43FD5001FF01F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5D80DB715DD7482A694CE00C /* Pods-SimpleImageFilter.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;

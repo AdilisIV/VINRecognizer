@@ -1,0 +1,6 @@
+framework module Pods_SimpleImageFilter {
+  umbrella header "Pods-SimpleImageFilter-umbrella.h"
+
+  export *
+  module * { export * }
+}
