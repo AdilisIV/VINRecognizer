@@ -6,9 +6,11 @@
 //  Copyright © 2017 Ski. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import <TesseractOCR/TesseractOCR.h>
-
-@interface TextRecognizer : NSObject
-
-@end
+//#import <UIKit/UIKit.h>
+//#import <TesseractOCR/TesseractOCR.h>
+//
+//@interface TextRecognizer : NSObject <G8TesseractDelegate>
+//
+//+ (nonnull NSString *)recognizeText:(nonnull UIImage *)inputImage;
+//
+//@end

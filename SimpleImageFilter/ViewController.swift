@@ -5,9 +5,11 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var renderView: RenderView!
     @IBOutlet weak var imageView: UIImageView!
-
+    @IBOutlet weak var recognizedTextLabel: UILabel!
+    
     var picture:PictureInput!
     var testImage = UIImage()
+    let filters = Filters()
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -19,43 +21,10 @@ class ViewController: UIViewController {
             let data = try? Data(contentsOf: fileURL)
             testImage = UIImage(data: data!)!
             
-//            /// Image Output
-//            imageView.image = testImage
-            
-            /// Image Filtering
-//            let cropFilter = Crop()
-//            let sizeInPixels = Size.init(width: 400.0, height: 48.0)
-//            cropFilter.cropSizeInPixels = sizeInPixels
-            
-            let myfilter2 = AdaptiveThreshold()
-            myfilter2.blurRadiusInPixels = 2.0
-            
-            let highlightsFilter = HighlightsAndShadows()
-            highlightsFilter.highlights = 3.0
-            
-            let exposureFilter = ExposureAdjustment()
-            exposureFilter.exposure = 0.9 // 0.9
-            
-            let contrastFilter = ContrastAdjustment()
-            contrastFilter.contrast = 4.0 // 4.0
-            
-            let saturationFilter = SaturationAdjustment()
-            saturationFilter.saturation = 0.0
-            
-            //let erosionFilter = Erosion() // расширяет темные области
-            //let dilationFilter = Dilation() // расширяет светлые области
-            
-            let grayImage = OpenCV.cvtColorBGR2GRAY(testImage)
-            
-            let filteredImage = grayImage.filterWithPipeline({ (input, output) in
-                input --> exposureFilter --> contrastFilter --> myfilter2 --> output
-                input.processImage()
-            })
-            
-            let threshFilteredImage = OpenCV.imageThreshold(filteredImage)
+            let filteredImage = filters.filteringDisplayImagePapperBold(image: testImage)
             
             /// Saving Rendered Image
-            let pngImage = UIImagePNGRepresentation(threshFilteredImage)!
+            let pngImage = UIImagePNGRepresentation(filteredImage)!
             do {
                 let documentDir = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
                 let fileURL = URL(string: "renderedImageTest.png", relativeTo: documentDir)!
@@ -71,31 +40,24 @@ class ViewController: UIViewController {
         } catch {
             print("Couldn't read file from url with error: \(error)")
         }
-
         
-        
-//        // Filtering image for display
-//        picture = PictureInput(image:UIImage(named:"full_CTC.jpg")!)
-//        
-//        let myfilter2 = AdaptiveThreshold()
-//        myfilter2.blurRadiusInPixels = 2.0
-//        
-//        let highlightsFilter = HighlightsAndShadows()
-//        highlightsFilter.highlights = 3.0
-//        
-//        let exposureFilter = ExposureAdjustment()
-//        exposureFilter.exposure = 0.9
-//        
-//        let contrastFilter = ContrastAdjustment()
-//        contrastFilter.contrast = 4.0
-//        
-//        let saturationFilter = SaturationAdjustment()
-//        saturationFilter.saturation = 0.0
-//        
-//        let smoothToonFilter = SmoothToonFilter()
-//        
-//        picture --> exposureFilter --> contrastFilter --> saturationFilter --> myfilter2 --> renderView
-//        picture.processImage()
+    }
+    
+    
+    
+    @IBAction func recognizeButtonTapped(_ sender: UIButton) {
+        /// Racognize Image There
+        let imageToRecognize = self.imageView.image!
+        recognizedTextLabel.text = TextRecognizer.recognizeImage(imageToRecognize)
+    }
+    
+    @IBAction func saveButtonTapped(_ sender: UIButton) {
+        let imageToSave: UIImage = self.imageView.image!
+        UIImageWriteToSavedPhotosAlbum(imageToSave, nil, #selector(savePhotoCompletion), nil)
+    }
+    
+    func savePhotoCompletion() {
+        print("Image are saved!!!")
     }
     
     override func viewDidLoad() {

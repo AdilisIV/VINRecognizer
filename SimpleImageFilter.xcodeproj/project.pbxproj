@@ -19,6 +19,8 @@
 		CE293B3E1F58192500C6138B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE293B361F58169B00C6138B /* AVFoundation.framework */; };
 		CE293B3F1F58193700C6138B /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE293B3A1F5816BF00C6138B /* CoreMedia.framework */; };
 		CE293B401F58193F00C6138B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE293B3C1F5816C800C6138B /* CoreGraphics.framework */; };
+		CE355F7B1F61B3E2007BCD25 /* Filters.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE355F7A1F61B3E2007BCD25 /* Filters.swift */; };
+		CE355F801F61B9CF007BCD25 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = CE355F7F1F61B9CF007BCD25 /* tessdata */; };
 		CE906B1E1F615BE100F0E221 /* TesseractOCR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE906B1D1F615BE100F0E221 /* TesseractOCR.framework */; };
 		CE906B251F615D2500F0E221 /* GPUImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE293B5C1F59608600C6138B /* GPUImage.framework */; };
 		CE906B261F615D3200F0E221 /* GPUImage.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CE293B5C1F59608600C6138B /* GPUImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -96,6 +98,8 @@
 		CE293B381F5816AC00C6138B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CE293B3A1F5816BF00C6138B /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		CE293B3C1F5816C800C6138B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		CE355F7A1F61B3E2007BCD25 /* Filters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Filters.swift; sourceTree = "<group>"; };
+		CE355F7F1F61B9CF007BCD25 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
 		CE906B1D1F615BE100F0E221 /* TesseractOCR.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TesseractOCR.framework; sourceTree = "<group>"; };
 		CE906B281F615DA700F0E221 /* TextRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextRecognizer.h; sourceTree = "<group>"; };
 		CE906B291F615DA700F0E221 /* TextRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextRecognizer.m; sourceTree = "<group>"; };
@@ -145,6 +149,7 @@
 				CE26CCAA1F56BB6E00B917DF /* VersionViewController.swift */,
 				CE26CCAC1F56BB7400B917DF /* CameraScreenViewController.swift */,
 				BCD985B11CA43FD5001FF01F /* ViewController.swift */,
+				CE355F7A1F61B3E2007BCD25 /* Filters.swift */,
 				BCD985B31CA43FD5001FF01F /* Main.storyboard */,
 				BCD985AF1CA43FD5001FF01F /* AppDelegate.swift */,
 				BCD985CA1CA44005001FF01F /* Resources */,
@@ -180,6 +185,7 @@
 		CE26CCA41F56BA1C00B917DF /* OpenCV */ = {
 			isa = PBXGroup;
 			children = (
+				CE355F7F1F61B9CF007BCD25 /* tessdata */,
 				CE26CCA51F56BA3400B917DF /* OpenCV.h */,
 				CE26CCA61F56BA3400B917DF /* OpenCV.mm */,
 			);
@@ -316,6 +322,7 @@
 			files = (
 				BCD985BA1CA43FD5001FF01F /* LaunchScreen.storyboard in Resources */,
 				CE26CCAF1F56C43D00B917DF /* full_CTC.jpg in Resources */,
+				CE355F801F61B9CF007BCD25 /* tessdata in Resources */,
 				CED7D6921F6152C900892B6A /* Assets-iOS.xcassets in Resources */,
 				BCD985B51CA43FD5001FF01F /* Main.storyboard in Resources */,
 			);
@@ -328,6 +335,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE355F7B1F61B3E2007BCD25 /* Filters.swift in Sources */,
 				BCD985B21CA43FD5001FF01F /* ViewController.swift in Sources */,
 				CE26CCA71F56BA3400B917DF /* OpenCV.mm in Sources */,
 				CE906B2A1F615DA700F0E221 /* TextRecognizer.m in Sources */,

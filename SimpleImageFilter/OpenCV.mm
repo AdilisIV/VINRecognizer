@@ -18,7 +18,7 @@
 /// Converts an UIImage to Mat.
 /// Orientation of UIImage will be lost.
 static void UIImageToMat(UIImage *image, cv::Mat &mat) {
-    
+
     // Create a pixel buffer.
     NSInteger width = CGImageGetWidth(image.CGImage);
     NSInteger height = CGImageGetHeight(image.CGImage);
@@ -33,6 +33,26 @@ static void UIImageToMat(UIImage *image, cv::Mat &mat) {
     // Draw all pixels to the buffer.
     cv::Mat mat8uc3 = cv::Mat((int)width, (int)height, CV_8UC3);
     cv::cvtColor(mat8uc4, mat8uc3, CV_RGBA2BGR);
+    
+    mat = mat8uc3;
+}
+
+static void UIDocumentImageToMat(UIImage *image, cv::Mat &mat) {
+    
+    // Create a pixel buffer.
+    NSInteger width = CGImageGetWidth(image.CGImage);
+    NSInteger height = CGImageGetHeight(image.CGImage);
+    CGImageRef imageRef = image.CGImage;
+    cv::Mat mat8uc4 = cv::Mat((int)height, (int)width, CV_8UC4);
+    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+    CGContextRef contextRef = CGBitmapContextCreate(mat8uc4.data, mat8uc4.cols, mat8uc4.rows, 8, mat8uc4.step, colorSpace, kCGImageAlphaPremultipliedLast | kCGBitmapByteOrderDefault);
+    CGContextDrawImage(contextRef, CGRectMake(0, 0, width, height), imageRef);
+    CGContextRelease(contextRef);
+    CGColorSpaceRelease(colorSpace);
+    
+    // Draw all pixels to the buffer.
+    cv::Mat mat8uc3 = cv::Mat((int)width, (int)height, CV_8UC1);
+    cv::cvtColor(mat8uc4, mat8uc3, CV_RGBA2GRAY);
     
     mat = mat8uc3;
 }
@@ -87,6 +107,12 @@ static UIImage *RestoreUIImageOrientation(UIImage *processed, UIImage *original)
     return RestoreUIImageOrientation(grayImage, image);
 }
 
+
+
+
+
+
+
 + (nonnull UIImage *)imageThreshold:(nonnull UIImage *)image {
     cv::Mat bgrMat;
     UIImageToMat(image, bgrMat);
@@ -95,6 +121,23 @@ static UIImage *RestoreUIImageOrientation(UIImage *processed, UIImage *original)
     UIImage *threshImage = MatToUIImage(threshMat);
     return RestoreUIImageOrientation(threshImage, image);
 }
+
+
++ (nonnull UIImage *)originaDocumentThreshold:(nonnull UIImage *)image {
+    cv::Mat bgrMat;
+    UIDocumentImageToMat(image, bgrMat);
+    cv::Mat threshMat;
+    cv::adaptiveThreshold(bgrMat, threshMat, 255, CV_ADAPTIVE_THRESH_GAUSSIAN_C, CV_THRESH_BINARY, 11, 2);
+    UIImage *threshImage = MatToUIImage(threshMat);
+    return RestoreUIImageOrientation(threshImage, image);
+}
+
+
+
+
+
+
+
 
 +(NSString *) openCVVersionString {
     return [NSString stringWithFormat: @"OpenCV Version: %s", CV_VERSION];
@@ -184,6 +227,40 @@ static UIImage *RestoreUIImageOrientation(UIImage *processed, UIImage *original)
     CGColorSpaceRelease(colorSpace);
     
     return finalImage;
+}
+
+
+@end
+
+
+
+@implementation TextRecognizer
+
++ (nonnull NSString *)recognizeImage:(nonnull UIImage *)inputImage {
+    
+    NSString *tesseractVersion = [G8Tesseract version];
+    NSLog(@"Tesseract Version: %@", tesseractVersion);
+    
+    G8Tesseract *tesseract = [[G8Tesseract alloc] initWithLanguage:@"eng"];
+    tesseract.delegate = self;
+    tesseract.charWhitelist = @"0123456789ABCDEFGHJKLMNPRSTUVWXYZ";
+    tesseract.image = inputImage.g8_blackAndWhite;
+    [tesseract recognize];
+    
+    NSLog(@"%@", [tesseract recognizedText]);
+    
+    NSString *text = [[NSString alloc] init];
+    text = [tesseract recognizedText];
+    
+    return text;
+}
+
+- (void)progressImageRecognitionForTesseract:(G8Tesseract *)tesseract {
+    NSLog(@"progress: %lu", (unsigned long)tesseract.progress);
+}
+
+- (BOOL)shouldCancelImageRecognitionForTesseract:(G8Tesseract *)tesseract {
+    return NO;  // return YES, if you need to interrupt tesseract before it finishes
 }
 
 

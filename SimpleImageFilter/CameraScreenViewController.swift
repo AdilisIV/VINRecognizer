@@ -202,7 +202,9 @@ extension CameraScreenViewController {
             context?.draw(cgImage, in: CGRect(x: -width, y: -height, width: width, height: height))
         }
         
-        let calculatedFrame = CGRect(x: 0, y: CGFloat((height - cropSize.height)/2.0), width: cropSize.width, height: cropSize.height)
+        var navbarHeight = self.navigationController?.navigationBar.bounds.size.height
+        navbarHeight = navbarHeight! + (navbarHeight! / 1)
+        let calculatedFrame = CGRect(x: 0, y: CGFloat((height - cropSize.height-navbarHeight!)/2.0), width: cropSize.width, height: cropSize.height)
         let scaledCGImage = context?.makeImage()?.cropping(to: calculatedFrame)
         
         
