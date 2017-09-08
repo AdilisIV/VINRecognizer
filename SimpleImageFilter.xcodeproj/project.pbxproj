@@ -11,7 +11,6 @@
 		BCD985B21CA43FD5001FF01F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD985B11CA43FD5001FF01F /* ViewController.swift */; };
 		BCD985B51CA43FD5001FF01F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCD985B31CA43FD5001FF01F /* Main.storyboard */; };
 		BCD985BA1CA43FD5001FF01F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCD985B81CA43FD5001FF01F /* LaunchScreen.storyboard */; };
-		CE26CC9F1F56B93F00B917DF /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE26CC9E1F56B93F00B917DF /* opencv2.framework */; };
 		CE26CCA71F56BA3400B917DF /* OpenCV.mm in Sources */ = {isa = PBXBuildFile; fileRef = CE26CCA61F56BA3400B917DF /* OpenCV.mm */; };
 		CE26CCAB1F56BB6E00B917DF /* VersionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE26CCAA1F56BB6E00B917DF /* VersionViewController.swift */; };
 		CE26CCAD1F56BB7400B917DF /* CameraScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE26CCAC1F56BB7400B917DF /* CameraScreenViewController.swift */; };
@@ -22,6 +21,10 @@
 		CE355F7B1F61B3E2007BCD25 /* Filters.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE355F7A1F61B3E2007BCD25 /* Filters.swift */; };
 		CE355F801F61B9CF007BCD25 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = CE355F7F1F61B9CF007BCD25 /* tessdata */; };
 		CE355F861F6274AA007BCD25 /* IMG_1560.png in Resources */ = {isa = PBXBuildFile; fileRef = CE355F851F6274AA007BCD25 /* IMG_1560.png */; };
+		CE355F881F6278C0007BCD25 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE355F871F6278C0007BCD25 /* opencv2.framework */; };
+		CE355F8C1F629599007BCD25 /* OCRHMM_knn_model_data.xml in Resources */ = {isa = PBXBuildFile; fileRef = CE355F8B1F629599007BCD25 /* OCRHMM_knn_model_data.xml */; };
+		CE355F8E1F629AE7007BCD25 /* OCRBeamSearch_CNN_model_data.xml.gz in Resources */ = {isa = PBXBuildFile; fileRef = CE355F8D1F629AE7007BCD25 /* OCRBeamSearch_CNN_model_data.xml.gz */; };
+		CE355F901F62A2F5007BCD25 /* OCRBeamSearch_CNN_model_data.xml in Resources */ = {isa = PBXBuildFile; fileRef = CE355F8F1F62A2F5007BCD25 /* OCRBeamSearch_CNN_model_data.xml */; };
 		CE906B1E1F615BE100F0E221 /* TesseractOCR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE906B1D1F615BE100F0E221 /* TesseractOCR.framework */; };
 		CE906B251F615D2500F0E221 /* GPUImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE293B5C1F59608600C6138B /* GPUImage.framework */; };
 		CE906B261F615D3200F0E221 /* GPUImage.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CE293B5C1F59608600C6138B /* GPUImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -88,7 +91,6 @@
 		BCD985B41CA43FD5001FF01F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BCD985B91CA43FD5001FF01F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BCD985BB1CA43FD5001FF01F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CE26CC9E1F56B93F00B917DF /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
 		CE26CCA51F56BA3400B917DF /* OpenCV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenCV.h; sourceTree = "<group>"; };
 		CE26CCA61F56BA3400B917DF /* OpenCV.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OpenCV.mm; sourceTree = "<group>"; };
 		CE26CCA91F56BA9700B917DF /* SimpleImageFilter-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SimpleImageFilter-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -102,6 +104,10 @@
 		CE355F7A1F61B3E2007BCD25 /* Filters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Filters.swift; sourceTree = "<group>"; };
 		CE355F7F1F61B9CF007BCD25 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
 		CE355F851F6274AA007BCD25 /* IMG_1560.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_1560.png; sourceTree = "<group>"; };
+		CE355F871F6278C0007BCD25 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
+		CE355F8B1F629599007BCD25 /* OCRHMM_knn_model_data.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = OCRHMM_knn_model_data.xml; sourceTree = "<group>"; };
+		CE355F8D1F629AE7007BCD25 /* OCRBeamSearch_CNN_model_data.xml.gz */ = {isa = PBXFileReference; lastKnownFileType = archive.gzip; path = OCRBeamSearch_CNN_model_data.xml.gz; sourceTree = "<group>"; };
+		CE355F8F1F62A2F5007BCD25 /* OCRBeamSearch_CNN_model_data.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = OCRBeamSearch_CNN_model_data.xml; sourceTree = "<group>"; };
 		CE906B1D1F615BE100F0E221 /* TesseractOCR.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TesseractOCR.framework; sourceTree = "<group>"; };
 		CE906B281F615DA700F0E221 /* TextRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextRecognizer.h; sourceTree = "<group>"; };
 		CE906B291F615DA700F0E221 /* TextRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextRecognizer.m; sourceTree = "<group>"; };
@@ -113,9 +119,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE355F881F6278C0007BCD25 /* opencv2.framework in Frameworks */,
 				CE906B251F615D2500F0E221 /* GPUImage.framework in Frameworks */,
 				CE906B1E1F615BE100F0E221 /* TesseractOCR.framework in Frameworks */,
-				CE26CC9F1F56B93F00B917DF /* opencv2.framework in Frameworks */,
 				CE293B401F58193F00C6138B /* CoreGraphics.framework in Frameworks */,
 				CE293B3F1F58193700C6138B /* CoreMedia.framework in Frameworks */,
 				CE293B3E1F58192500C6138B /* AVFoundation.framework in Frameworks */,
@@ -173,12 +179,12 @@
 		BCD985CB1CA4400E001FF01F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CE355F871F6278C0007BCD25 /* opencv2.framework */,
 				CE906B1D1F615BE100F0E221 /* TesseractOCR.framework */,
 				CE293B3C1F5816C800C6138B /* CoreGraphics.framework */,
 				CE293B3A1F5816BF00C6138B /* CoreMedia.framework */,
 				CE293B381F5816AC00C6138B /* UIKit.framework */,
 				CE293B361F58169B00C6138B /* AVFoundation.framework */,
-				CE26CC9E1F56B93F00B917DF /* opencv2.framework */,
 				BC9E36581E525B5A00B8604F /* GPUImage.xcodeproj */,
 			);
 			name = Frameworks;
@@ -188,6 +194,9 @@
 		CE26CCA41F56BA1C00B917DF /* OpenCV */ = {
 			isa = PBXGroup;
 			children = (
+				CE355F8F1F62A2F5007BCD25 /* OCRBeamSearch_CNN_model_data.xml */,
+				CE355F8D1F629AE7007BCD25 /* OCRBeamSearch_CNN_model_data.xml.gz */,
+				CE355F8B1F629599007BCD25 /* OCRHMM_knn_model_data.xml */,
 				CE355F7F1F61B9CF007BCD25 /* tessdata */,
 				CE26CCA51F56BA3400B917DF /* OpenCV.h */,
 				CE26CCA61F56BA3400B917DF /* OpenCV.mm */,
@@ -327,8 +336,11 @@
 				CE355F861F6274AA007BCD25 /* IMG_1560.png in Resources */,
 				CE26CCAF1F56C43D00B917DF /* full_CTC.jpg in Resources */,
 				CE355F801F61B9CF007BCD25 /* tessdata in Resources */,
+				CE355F901F62A2F5007BCD25 /* OCRBeamSearch_CNN_model_data.xml in Resources */,
+				CE355F8C1F629599007BCD25 /* OCRHMM_knn_model_data.xml in Resources */,
 				CED7D6921F6152C900892B6A /* Assets-iOS.xcassets in Resources */,
 				BCD985B51CA43FD5001FF01F /* Main.storyboard in Resources */,
+				CE355F8E1F629AE7007BCD25 /* OCRBeamSearch_CNN_model_data.xml.gz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

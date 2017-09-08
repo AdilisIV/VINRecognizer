@@ -11,12 +11,17 @@
 
 @interface OpenCV : NSObject
 
+
+@property (strong, nonatomic) UIImage* cvmatImageToRecognize;
+
 /// Converts a full color image to grayscale image with using OpenCV.
 + (nonnull UIImage *)cvtColorBGR2GRAY:(nonnull UIImage *)image;
 
 + (nonnull UIImage *)imageThreshold:(nonnull UIImage *)image;
 
 + (nonnull UIImage *)originaDocumentThreshold:(nonnull UIImage *)image;
+
++ (NSString *) openCVImageRecognize:(UIImage *)image;
 
 + (nonnull NSString *) openCVVersionString;
 

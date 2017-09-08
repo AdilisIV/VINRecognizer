@@ -8,8 +8,14 @@
 
 // Put OpenCV include files at the top. Otherwise an error happens.
 #import <vector>
+#import <string>
 #import <opencv2/opencv.hpp>
 #import <opencv2/imgproc.hpp>
+#import <opencv2/text.hpp>
+#import <opencv2/text/ocr.hpp>
+#import <opencv2/highgui.hpp>
+#import <opencv2/core/utility.hpp>
+#import <iostream>
 
 #import <Foundation/Foundation.h>
 #import <CoreGraphics/CoreGraphics.h>
@@ -98,6 +104,7 @@ static UIImage *RestoreUIImageOrientation(UIImage *processed, UIImage *original)
 
 @implementation OpenCV
 
+
 + (nonnull UIImage *)cvtColorBGR2GRAY:(nonnull UIImage *)image {
     cv::Mat bgrMat;
     UIImageToMat(image, bgrMat);
@@ -109,9 +116,48 @@ static UIImage *RestoreUIImageOrientation(UIImage *processed, UIImage *original)
 
 
 
++ (NSString *) openCVImageRecognize:(UIImage *)image {
+    cv::Mat bgrMat;
+    UIImageToMat(image, bgrMat);
+    NSString *outputString = [[NSString alloc] init];
+    
+    std::string vocabulary = "0123456789ABCDEFGHJKLMNPRSTUVWXYZ";
+    std::vector<std::string> lexicon;
+    lexicon.push_back(std::string("FX"));
+    cv::Mat transition_p;
+    cv::text::createOCRHMMTransitionsTable(vocabulary, lexicon, transition_p);
+    
+    cv::Mat emission_p = cv::Mat::eye(62, 62, CV_64FC1);
+    
+    cv::text::OCRBeamSearchDecoder ocr;
+    ocr.create(cv::text::loadOCRBeamSearchClassifierCNN("OCRBeamSearch_CNN_model_data.xml"), vocabulary, transition_p, emission_p);
+    
+    std::string output;
+    std::vector<Rect> boxes;
+    std::vector<std::string> words;
+    std::vector<float> confidences;
+    
+    ocr.run(bgrMat, output);
+    std::cout << "OCR output = " << output << ". Decoded!";
+    
+    return outputString;
+}
 
 
 
+//+ (NSString *) openCVTextRecognize:(UIImage *)image {
+//    cv::Mat bgrMat;
+//    UIImageToMat(image, bgrMat);
+//    NSString *outputString = [[NSString alloc] init];
+//    //cv::text::BaseOCR::run(bgrMat, outputString);
+//    cv::text::loadOCRHMMClassifierNM("OCRHMM_knn_model_data.xml");
+//    cv::text::OCRHMMDecoder::ClassifierCallback callback;
+//    std::vector<int> out_classes;
+//    std::vector<double> out_confidences;
+//    callback.eval(bgrMat, out_classes, out_confidences);
+//    
+//    return outputString;
+//}
 
 + (nonnull UIImage *)imageThreshold:(nonnull UIImage *)image {
     cv::Mat bgrMat;
@@ -129,6 +175,7 @@ static UIImage *RestoreUIImageOrientation(UIImage *processed, UIImage *original)
     cv::Mat threshMat;
     cv::adaptiveThreshold(bgrMat, threshMat, 255, CV_ADAPTIVE_THRESH_GAUSSIAN_C, CV_THRESH_BINARY, 11, 2);
     UIImage *threshImage = MatToUIImage(threshMat);
+    
     return RestoreUIImageOrientation(threshImage, image);
 }
 

@@ -49,6 +49,8 @@ class ViewController: UIViewController {
         /// Racognize Image There
         let imageToRecognize = self.imageView.image!
         recognizedTextLabel.text = TextRecognizer.recognizeImage(imageToRecognize)
+        
+        //OpenCV.openCVImageRecognize(imageToRecognize)
     }
     
     @IBAction func saveButtonTapped(_ sender: UIButton) {
