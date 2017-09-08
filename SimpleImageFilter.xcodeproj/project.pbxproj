@@ -21,6 +21,7 @@
 		CE293B401F58193F00C6138B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE293B3C1F5816C800C6138B /* CoreGraphics.framework */; };
 		CE355F7B1F61B3E2007BCD25 /* Filters.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE355F7A1F61B3E2007BCD25 /* Filters.swift */; };
 		CE355F801F61B9CF007BCD25 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = CE355F7F1F61B9CF007BCD25 /* tessdata */; };
+		CE355F861F6274AA007BCD25 /* IMG_1560.png in Resources */ = {isa = PBXBuildFile; fileRef = CE355F851F6274AA007BCD25 /* IMG_1560.png */; };
 		CE906B1E1F615BE100F0E221 /* TesseractOCR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE906B1D1F615BE100F0E221 /* TesseractOCR.framework */; };
 		CE906B251F615D2500F0E221 /* GPUImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE293B5C1F59608600C6138B /* GPUImage.framework */; };
 		CE906B261F615D3200F0E221 /* GPUImage.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CE293B5C1F59608600C6138B /* GPUImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -100,6 +101,7 @@
 		CE293B3C1F5816C800C6138B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		CE355F7A1F61B3E2007BCD25 /* Filters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Filters.swift; sourceTree = "<group>"; };
 		CE355F7F1F61B9CF007BCD25 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
+		CE355F851F6274AA007BCD25 /* IMG_1560.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_1560.png; sourceTree = "<group>"; };
 		CE906B1D1F615BE100F0E221 /* TesseractOCR.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TesseractOCR.framework; sourceTree = "<group>"; };
 		CE906B281F615DA700F0E221 /* TextRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextRecognizer.h; sourceTree = "<group>"; };
 		CE906B291F615DA700F0E221 /* TextRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextRecognizer.m; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				CE26CCAE1F56C43D00B917DF /* full_CTC.jpg */,
+				CE355F851F6274AA007BCD25 /* IMG_1560.png */,
 				BCD985B81CA43FD5001FF01F /* LaunchScreen.storyboard */,
 				CED7D6911F6152C900892B6A /* Assets-iOS.xcassets */,
 			);
@@ -321,6 +324,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BCD985BA1CA43FD5001FF01F /* LaunchScreen.storyboard in Resources */,
+				CE355F861F6274AA007BCD25 /* IMG_1560.png in Resources */,
 				CE26CCAF1F56C43D00B917DF /* full_CTC.jpg in Resources */,
 				CE355F801F61B9CF007BCD25 /* tessdata in Resources */,
 				CED7D6921F6152C900892B6A /* Assets-iOS.xcassets in Resources */,

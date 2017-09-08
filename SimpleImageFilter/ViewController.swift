@@ -31,8 +31,8 @@ class ViewController: UIViewController {
                 try pngImage.write(to: fileURL, options: .atomic)
                 
                 /// Showing Rendered Image
-                let data = try? Data(contentsOf: fileURL)
-                imageView.image = UIImage(data: data!)
+                let data = UIImage(named: "IMG_1560.png"); //try? Data(contentsOf: fileURL)
+                imageView.image = data//UIImage(data: data!)
                 
             } catch {
                 print("Couldn't write to file with error: \(error)")

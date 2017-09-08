@@ -242,6 +242,7 @@ static UIImage *RestoreUIImageOrientation(UIImage *processed, UIImage *original)
     NSLog(@"Tesseract Version: %@", tesseractVersion);
     
     G8Tesseract *tesseract = [[G8Tesseract alloc] initWithLanguage:@"eng"];
+    tesseract.engineMode = G8OCREngineModeTesseractOnly;
     tesseract.delegate = self;
     tesseract.charWhitelist = @"0123456789ABCDEFGHJKLMNPRSTUVWXYZ";
     tesseract.image = inputImage.g8_blackAndWhite;

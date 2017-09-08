@@ -88,7 +88,7 @@ class Filters: NSObject {
     public func filteringDisplayImagePapperBold(image: UIImage) -> UIImage {
         
         let filteredImage = image.filterWithPipeline({ (input, output) in
-            input --> dilationFilter --> adaptiveThresholdFilter(coeff: 2.0) --> contrastFilter(coeff: 4.0) --> output
+            input --> dilationFilter --> adaptiveThresholdFilter(coeff: 1.0) --> contrastFilter(coeff: 4.0) --> output
             input.processImage()
         })
         
